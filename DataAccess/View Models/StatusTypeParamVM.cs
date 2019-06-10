@@ -13,6 +13,8 @@ namespace DataAccess.View_Models
         public string StatusTypeValue { get; set; }
         public string StatusTypeModule { get; set; }
 
+        public StatusTypeParamVM() { }
+
         public StatusTypeParamVM(string statusTypeName, string statusTypeValue, string statusTypeModule)
         {
             this.StatusTypeName = statusTypeName;
@@ -20,6 +22,14 @@ namespace DataAccess.View_Models
             this.StatusTypeModule = statusTypeValue;
         }
 
-        public StatusTypeParamVM() { }
+        public void Update(int id, string statusTypeName, string statusTypeValue, string statusTypeModule)
+        {
+            this.Id = id;
+            this.StatusTypeName = statusTypeName;
+            this.StatusTypeValue = statusTypeValue;
+            this.StatusTypeModule = statusTypeValue;
+        }
+
+        
     }
 }

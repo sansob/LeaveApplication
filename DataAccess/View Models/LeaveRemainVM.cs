@@ -14,6 +14,8 @@ namespace DataAccess.View_Models
         public int Duration { get; set; }
         public string Type { get; set; }
 
+        public LeaveRemainVM() { }
+
         public LeaveRemainVM(int leaveRequestId, string userId, int duration, string type)
         {
             this.LeaveRequestId = leaveRequestId;
@@ -21,6 +23,17 @@ namespace DataAccess.View_Models
             this.Duration = duration;
             this.Type = type;
         }
+
+        public void Update(int id, int leaveRequestId, string userId, int duration, string type)
+        {
+            this.Id = id;
+            this.LeaveRequestId = leaveRequestId;
+            this.UserID = userId;
+            this.Duration = duration;
+            this.Type = type;
+        }
+
+
 
     }
 }

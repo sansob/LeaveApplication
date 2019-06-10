@@ -1,4 +1,5 @@
 ﻿using Core.Base;
+using DataAccess.View_Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -17,5 +18,27 @@ namespace DataAccess.Models
 
         public Employee() { }
 
+        public Employee(EmployeeVM employeeVM)
+        {
+            this.UserName = employeeVM.UserName;
+            this.Name = employeeVM.Name;
+            this.Role = employeeVM.Role;
+            this.CreateDate = DateTimeOffset.Now.ToLocalTime();
+        }
+
+        public void Update(int id, EmployeeVM employeeVM)
+        {
+            this.Id = employeeVM.Id;
+            this.UserName = employeeVM.UserName;
+            this.Name = employeeVM.Name;
+            this.Role = employeeVM.Role;
+            this.CreateDate = DateTimeOffset.Now.ToLocalTime();
+        }
+
+        public void Delete()
+        {
+            this.IsDalete = true;
+            this.DeleteDate = DateTimeOffset.Now.ToLocalTime();
+        }
     }
 }

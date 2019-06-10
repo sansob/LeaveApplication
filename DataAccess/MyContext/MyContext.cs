@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.MyContext
 {
-    class MyContext : DbContext
+    public class MyContext : DbContext
     {
         public MyContext() : base("MyContext") { }
 

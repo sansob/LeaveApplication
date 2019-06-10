@@ -12,6 +12,7 @@ namespace DataAccess.View_Models
         public string LeaveName { get; set; }
         public string LeaveTypeParams { get; set; }
 
+        public LeaveTypeVM() { }
 
         public LeaveTypeVM(string leaveName, string leaveTypeParams)
         {
@@ -19,6 +20,13 @@ namespace DataAccess.View_Models
             this.LeaveTypeParams = leaveTypeParams;
         }
 
-        public LeaveTypeVM() { }
+        public void Update(int id, string leaveName, string leaveTypeParams)
+        {
+            this.Id = id;
+            this.LeaveName = leaveName;
+            this.LeaveTypeParams = leaveTypeParams;
+        }
+
+        
     }
 }

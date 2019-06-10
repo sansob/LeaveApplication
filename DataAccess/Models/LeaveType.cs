@@ -1,4 +1,5 @@
 ﻿using Core.Base;
+using DataAccess.View_Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -13,10 +14,30 @@ namespace DataAccess.Models
     {
 
         public string LeaveName { get; set; }
-        public string TypeStatus { get; set; }
+        public string LeaveTypeParams { get; set; }
 
         public LeaveType() { }
 
+        public LeaveType(LeaveTypeVM leaveTypeVM)
+        {
+            
+            this.LeaveTypeParams = leaveTypeVM.LeaveTypeParams;
+            this.CreateDate = DateTimeOffset.Now.ToLocalTime();
+        }
+
+        public void Update(int id, LeaveTypeVM leaveTypeVM)
+        {
+            this.Id = leaveTypeVM.Id;
+            this.LeaveName = leaveTypeVM.LeaveName;
+            this.LeaveTypeParams = leaveTypeVM.LeaveTypeParams;
+            this.CreateDate = DateTimeOffset.Now.ToLocalTime();
+        }
+
+        public void Delete()
+        {
+            this.IsDalete = true;
+            this.DeleteDate = DateTimeOffset.Now.ToLocalTime();
+        }
 
     }
 }

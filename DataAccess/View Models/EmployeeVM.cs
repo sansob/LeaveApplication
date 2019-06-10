@@ -13,8 +13,18 @@ namespace DataAccess.View_Models
         public string Name { get; set; }
         public string Role { get; set; }
 
+        public EmployeeVM() { }
+
         public EmployeeVM( string userName, string name, string role)
         {
+            this.UserName = userName;
+            this.Name = name;
+            this.Role = role;            
+        }
+
+        public void Update(int id, string userName, string name, string role)
+        {
+            this.Id = id;
             this.UserName = userName;
             this.Name = name;
             this.Role = role;

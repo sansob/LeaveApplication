@@ -1,4 +1,5 @@
 ﻿using Core.Base;
+using DataAccess.View_Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -21,5 +22,29 @@ namespace DataAccess.Models
 
         public LeaveRequest LeaveRequest { get; set; }
 
+        public LeaveRemain(LeaveRemainVM leaveRemainVM)
+        {
+            this.LeaveRequestId = leaveRemainVM.LeaveRequestId;
+            this.UserID = leaveRemainVM.UserID;
+            this.Duration = leaveRemainVM.Duration;
+            this.Type = leaveRemainVM.Type;
+            this.CreateDate = DateTimeOffset.Now.ToLocalTime();
+        }
+
+        public void Update(int id, LeaveRemainVM leaveRemainVM)
+        {
+            this.Id = leaveRemainVM.Id;
+            this.LeaveRequestId = leaveRemainVM.LeaveRequestId;
+            this.UserID = leaveRemainVM.UserID;
+            this.Duration = leaveRemainVM.Duration;
+            this.Type = leaveRemainVM.Type;
+            this.CreateDate = DateTimeOffset.Now.ToLocalTime();
+        }
+
+        public void Delete()
+        {
+            this.IsDalete = true;
+            this.DeleteDate = DateTimeOffset.Now.ToLocalTime();
+        }
     }
 }
