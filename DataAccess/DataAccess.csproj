@@ -72,11 +72,11 @@
     <Compile Include="MyContext\MyContext.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="View Models\EmployeeVM.cs" />
-    <Compile Include="View Models\LeaveRemainVM.cs" />
-    <Compile Include="View Models\LeaveRequestVM.cs" />
-    <Compile Include="View Models\LeaveTypeVM.cs" />
-    <Compile Include="View Models\StatusTypeParamVM.cs" />
+    <Compile Include="ViewModels\EmployeeVM.cs" />
+    <Compile Include="ViewModels\LeaveRemainVM.cs" />
+    <Compile Include="ViewModels\LeaveRequestVM.cs" />
+    <Compile Include="ViewModels\LeaveTypeVM.cs" />
+    <Compile Include="ViewModels\StatusTypeParamVM.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

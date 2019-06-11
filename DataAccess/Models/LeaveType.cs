@@ -1,5 +1,5 @@
 ﻿using Core.Base;
-using DataAccess.View_Models;
+using DataAccess.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -35,7 +35,7 @@ namespace DataAccess.Models
 
         public void Delete()
         {
-            this.IsDalete = true;
+            this.IsDelete = true;
             this.DeleteDate = DateTimeOffset.Now.ToLocalTime();
         }
 

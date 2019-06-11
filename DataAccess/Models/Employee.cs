@@ -1,5 +1,5 @@
 ﻿using Core.Base;
-using DataAccess.View_Models;
+using DataAccess.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -19,6 +19,7 @@ namespace DataAccess.Models
 
         public Employee() { }
 
+       
         //public Employee(EmployeeVM employeeVM)
         //{
         //    this.UserName = employeeVM.UserName;
@@ -41,5 +42,7 @@ namespace DataAccess.Models
         //    this.IsDalete = true;
         //    this.DeleteDate = DateTimeOffset.Now.ToLocalTime();
         //}
+
+
     }
 }
