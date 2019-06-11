@@ -59,6 +59,10 @@
     <Compile Include="Migrations\201906100407042_UpdatingModelLeave.Designer.cs">
       <DependentUpon>201906100407042_UpdatingModelLeave.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906110126206_UpdatingModelLeave1.cs" />
+    <Compile Include="Migrations\201906110126206_UpdatingModelLeave1.Designer.cs">
+      <DependentUpon>201906110126206_UpdatingModelLeave1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\LeaveRemain.cs" />
@@ -90,6 +94,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906100407042_UpdatingModelLeave.resx">
       <DependentUpon>201906100407042_UpdatingModelLeave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906110126206_UpdatingModelLeave1.resx">
+      <DependentUpon>201906110126206_UpdatingModelLeave1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
