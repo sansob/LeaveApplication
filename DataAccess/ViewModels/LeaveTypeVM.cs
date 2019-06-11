@@ -4,21 +4,21 @@
     {
         public int Id { get; set; }
         public string LeaveName { get; set; }
-        public string LeaveTypeParams { get; set; }
+        public int StatusTypeParam_Id { get; set; }
 
         public LeaveTypeVM() { }
 
-        public LeaveTypeVM(string leaveName, string leaveTypeParams)
+        public LeaveTypeVM(string leaveName, int statusTypeParam_Id)
         {
             this.LeaveName = leaveName;
-            this.LeaveTypeParams = leaveTypeParams;
+            this.StatusTypeParam_Id = statusTypeParam_Id;
         }
 
-        public void Update(int id, string leaveName, string leaveTypeParams)
+        public void Update(int id, string leaveName, int statusTypeParam_Id)
         {
             this.Id = id;
             this.LeaveName = leaveName;
-            this.LeaveTypeParams = leaveTypeParams;
+            this.StatusTypeParam_Id = statusTypeParam_Id;
         }
 
         

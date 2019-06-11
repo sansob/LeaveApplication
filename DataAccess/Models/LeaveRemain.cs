@@ -3,43 +3,41 @@ using System;
 using System.ComponentModel.DataAnnotations.Schema;
 using DataAccess.ViewModels;
 
-namespace DataAccess.Models
-{
+namespace DataAccess.Models {
     [Table("TB_T_LeaveRemains")]
-    public class LeaveRemain : BaseModel
-    {
-        [ForeignKey("LeaveRequest")]
-        public int LeaveRequestId { get; set; }
-        public string UserID { get; set; }
+    public class LeaveRemain : BaseModel {
+        [ForeignKey("LeaveRequest")] public int LeaveRequest_Id { get; set; }
+        [ForeignKey("Employee")] public int User_Id { get; set; }
+        [ForeignKey("StatusTypeParam")] public int Type_Id { get; set; }
         public int Duration { get; set; }
-        public string Type { get; set; }
 
-        public LeaveRemain() { }
+        public LeaveRemain() {
+        }
+
+        public Employee Employee { get; set; }
+        public StatusTypeParam StatusTypeParam { get; set; }
 
         public LeaveRequest LeaveRequest { get; set; }
 
-        public LeaveRemain(LeaveRemainVM leaveRemainVM)
-        {
-            this.LeaveRequestId = leaveRemainVM.LeaveRequestId;
-            this.UserID = leaveRemainVM.UserID;
+        public LeaveRemain(LeaveRemainVM leaveRemainVM) {
+            this.LeaveRequest_Id = leaveRemainVM.LeaveRequest_Id;
+            this.User_Id = leaveRemainVM.User_Id;
             this.Duration = leaveRemainVM.Duration;
-            this.Type = leaveRemainVM.Type;
+            this.Type_Id = leaveRemainVM.Type_Id;
             this.CreateDate = DateTimeOffset.Now.ToLocalTime();
         }
 
-        public void Update(int id, LeaveRemainVM leaveRemainVM)
-        {
+        public void Update(int id, LeaveRemainVM leaveRemainVM) {
             this.Id = leaveRemainVM.Id;
-            this.LeaveRequestId = leaveRemainVM.LeaveRequestId;
-            this.UserID = leaveRemainVM.UserID;
+            this.LeaveRequest_Id = leaveRemainVM.LeaveRequest_Id;
+            this.User_Id = leaveRemainVM.User_Id;
             this.Duration = leaveRemainVM.Duration;
-            this.Type = leaveRemainVM.Type;
+            this.Type_Id = leaveRemainVM.Type_Id;
             this.CreateDate = DateTimeOffset.Now.ToLocalTime();
         }
 
-        public void Delete()
-        {
-            this.IsDalete = true;
+        public void Delete() {
+            this.IsDelete = true;
             this.DeleteDate = DateTimeOffset.Now.ToLocalTime();
         }
     }

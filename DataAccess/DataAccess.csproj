@@ -51,17 +51,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\201906081527425_AddingModelLeave.cs" />
-    <Compile Include="Migrations\201906081527425_AddingModelLeave.designer.cs">
-      <DependentUpon>201906081527425_AddingModelLeave.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201906100407042_UpdatingModelLeave.cs" />
-    <Compile Include="Migrations\201906100407042_UpdatingModelLeave.Designer.cs">
-      <DependentUpon>201906100407042_UpdatingModelLeave.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201906110126206_UpdatingModelLeave1.cs" />
-    <Compile Include="Migrations\201906110126206_UpdatingModelLeave1.Designer.cs">
-      <DependentUpon>201906110126206_UpdatingModelLeave1.cs</DependentUpon>
+    <Compile Include="Migrations\201906110253352_newImage.cs" />
+    <Compile Include="Migrations\201906110253352_newImage.Designer.cs">
+      <DependentUpon>201906110253352_newImage.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Employee.cs" />
@@ -89,14 +81,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201906081527425_AddingModelLeave.resx">
-      <DependentUpon>201906081527425_AddingModelLeave.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201906100407042_UpdatingModelLeave.resx">
-      <DependentUpon>201906100407042_UpdatingModelLeave.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201906110126206_UpdatingModelLeave1.resx">
-      <DependentUpon>201906110126206_UpdatingModelLeave1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201906110253352_newImage.resx">
+      <DependentUpon>201906110253352_newImage.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

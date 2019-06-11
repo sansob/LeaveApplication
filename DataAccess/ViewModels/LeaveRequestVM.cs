@@ -9,31 +9,31 @@ namespace DataAccess.ViewModels {
         public DateTimeOffset EndDate { get; set; }
         public DateTimeOffset RequestDate { get; set; }
         public string Reason { get; set; }
-        public int RequesterId { get; set; }
-        public int ApprovalManagerId { get; set; }
-        public int ApprovalHrdId { get; set; }
+        public int Requester_Id { get; set; }
+        public int ApprovalManager_Id { get; set; }
+        public int ApprovalHrd_Id { get; set; }
         public string Attachments { get; set; }
-        public string Status { get; set; }
+        public int Status { get; set; }
 
         public LeaveRequestVM() { }
 
-        public LeaveRequestVM( int leaveId, DateTimeOffset FromDate, DateTimeOffset endDate, DateTimeOffset requestDate, string reason, int requesterId, 
-            int approvalManagerId, int approvalHrdId, string attachments, string status)
+        public LeaveRequestVM( int leaveId, DateTimeOffset FromDate, DateTimeOffset endDate, DateTimeOffset requestDate, string reason, int requester_Id, 
+            int approvalManager_Id, int approvalHrd_Id, string attachments, int status)
         {
             this.LeaveId = leaveId;
             this.FromDate = FromDate;
             this.EndDate = endDate;
             this.RequestDate = requestDate;
             this.Reason = reason;
-            this.RequesterId = requesterId;
-            this.ApprovalManagerId = approvalManagerId;
-            this.ApprovalHrdId = approvalHrdId;
+            this.Requester_Id = requester_Id;
+            this.ApprovalManager_Id = approvalManager_Id;
+            this.ApprovalHrd_Id = approvalHrd_Id;
             this.Attachments = attachments;
             this.Status = status;
         }
 
-        public void Update(int id, int leaveId, DateTimeOffset FromDate, DateTimeOffset endDate, DateTimeOffset requestDate, string reason, int requesterId,
-            int approvalManagerId, int approvalHrdId, string attachments, string status)
+        public void Update(int id, int leaveId, DateTimeOffset FromDate, DateTimeOffset endDate, DateTimeOffset requestDate, string reason, int requester_Id,
+            int approvalManager_Id, int approvalHrd_Id, string attachments, int status)
         {
             this.Id = id;
             this.LeaveId = leaveId;
@@ -41,9 +41,9 @@ namespace DataAccess.ViewModels {
             this.EndDate = endDate;
             this.RequestDate = requestDate;
             this.Reason = reason;
-            this.RequesterId = requesterId;
-            this.ApprovalManagerId = approvalManagerId;
-            this.ApprovalHrdId = approvalHrdId;
+            this.Requester_Id = requester_Id;
+            this.ApprovalManager_Id = approvalManager_Id;
+            this.ApprovalHrd_Id = approvalHrd_Id;
             this.Attachments = attachments;
             this.Status = status;
         }

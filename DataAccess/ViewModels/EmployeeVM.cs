@@ -9,7 +9,7 @@
 
         public EmployeeVM() { }
 
-        public EmployeeVM( string userName, string name, string role, string password)
+        public EmployeeVM(string userName, string name, string role, string password)
         {
             this.UserName = userName;
             this.Name = name;
@@ -17,12 +17,5 @@
             this.Password = password;            
         }
 
-        //public void Update(int id, string userName, string name, string role)
-        //{
-        //    this.Id = id;
-        //    this.UserName = userName;
-        //    this.Name = name;
-        //    this.Role = role;
-        //}
     }
 }

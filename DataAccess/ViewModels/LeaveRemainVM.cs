@@ -2,28 +2,28 @@
     public class LeaveRemainVM
     {
         public int Id { get; set; }
-        public int LeaveRequestId { get; set; }
-        public string UserID { get; set; }
+        public int LeaveRequest_Id { get; set; }
+        public int User_Id { get; set; }
         public int Duration { get; set; }
-        public string Type { get; set; }
+        public int Type_Id { get; set; }
 
         public LeaveRemainVM() { }
 
-        public LeaveRemainVM(int leaveRequestId, string userId, int duration, string type)
+        public LeaveRemainVM(int leaveRequest_Id, int User_Id, int duration, int type_Id)
         {
-            this.LeaveRequestId = leaveRequestId;
-            this.UserID = userId;
+            this.LeaveRequest_Id = leaveRequest_Id;
+            this.User_Id = User_Id;
             this.Duration = duration;
-            this.Type = type;
+            this.Type_Id = type_Id;
         }
 
-        public void Update(int id, int leaveRequestId, string userId, int duration, string type)
+        public void Update(int id, int leaveRequest_Id, int userId, int duration, int type_Id)
         {
             this.Id = id;
-            this.LeaveRequestId = leaveRequestId;
-            this.UserID = userId;
+            this.LeaveRequest_Id = leaveRequest_Id;
+            this.User_Id = User_Id;
             this.Duration = duration;
-            this.Type = type;
+            this.Type_Id = type_Id;
         }
 
 

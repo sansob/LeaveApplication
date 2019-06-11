@@ -32,7 +32,7 @@ namespace Common.Repository.Application
 
         public List<StatusTypeParam> Get()
         {
-            var get = myContext.statusTypeParams.Where(X => X.IsDalete == false).ToList();
+            var get = myContext.statusTypeParams.Where(X => X.IsDelete == false).ToList();
             return get;
         }
 
@@ -45,7 +45,7 @@ namespace Common.Repository.Application
         public List<StatusTypeParam> GetSearch(string values)
         {
             var get = myContext.statusTypeParams.Where
-                (X => (X.StatusTypeName.Contains(values) || X.StatusTypeValue.Contains(values) || X.StatusTypeModule.Contains(values)) && X.IsDalete == false).ToList();
+                (X => (X.StatusTypeName.Contains(values) || X.StatusTypeValue.Contains(values) || X.StatusTypeModule.Contains(values)) && X.IsDelete == false).ToList();
             return get;
         }
 

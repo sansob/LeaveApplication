@@ -29,7 +29,7 @@ namespace DataAccess.Models {
         }
 
         public void Delete() {
-            this.IsDalete = true;
+            this.IsDelete = true;
             this.DeleteDate = DateTimeOffset.Now.ToLocalTime();
         }
     }
