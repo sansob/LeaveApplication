@@ -10,7 +10,7 @@ namespace DataAccess.Models {
         [ForeignKey("RequesterEmployee")] public int Requester_Id { get; set; }
         [ForeignKey("ManagerEmployee")] public int ApprovalManager_Id { get; set; }
         [ForeignKey("HrdEmployee")] public int ApprovalHrd_Id { get; set; }
-        [ForeignKey("StatusTypeParam")] public int Status { get; set; }
+        [ForeignKey("StatusTypeParam")] public int Status_Id { get; set; }
         public DateTimeOffset FromDate { get; set; }
         public DateTimeOffset EndDate { get; set; }
         public DateTimeOffset RequestDate { get; set; }
@@ -28,7 +28,7 @@ namespace DataAccess.Models {
         public StatusTypeParam StatusTypeParam { get; set; }
 
         public LeaveRequest(LeaveRequestVM leaveRequestVM) {
-            Leave_Id = leaveRequestVM.LeaveId;
+            Leave_Id = leaveRequestVM.Leave_Id;
             FromDate = leaveRequestVM.FromDate;
             EndDate = leaveRequestVM.EndDate;
             RequestDate = leaveRequestVM.RequestDate;
@@ -37,13 +37,13 @@ namespace DataAccess.Models {
             ApprovalManager_Id = leaveRequestVM.ApprovalManager_Id;
             ApprovalHrd_Id = leaveRequestVM.ApprovalManager_Id;
             Attachments = leaveRequestVM.Attachments;
-            Status = leaveRequestVM.Status;
+            Status_Id = leaveRequestVM.Status_Id;
             CreateDate = DateTimeOffset.Now.ToLocalTime();
         }
 
         public void Update(int id, LeaveRequestVM leaveRequestVM) {
-            Id = leaveRequestVM.LeaveId;
-            Leave_Id = leaveRequestVM.LeaveId;
+            Id = leaveRequestVM.Leave_Id;
+            Leave_Id = leaveRequestVM.Leave_Id;
             FromDate = leaveRequestVM.FromDate;
             EndDate = leaveRequestVM.EndDate;
             RequestDate = leaveRequestVM.RequestDate;
@@ -52,7 +52,7 @@ namespace DataAccess.Models {
             ApprovalManager_Id = leaveRequestVM.ApprovalManager_Id;
             ApprovalHrd_Id = leaveRequestVM.ApprovalHrd_Id;
             Attachments = leaveRequestVM.Attachments;
-            Status = leaveRequestVM.Status;
+            Status_Id = leaveRequestVM.Status_Id;
             CreateDate = DateTimeOffset.Now.ToLocalTime();
         }
 

@@ -5,7 +5,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DataAccess.Models {
     [Table("TB_M_StatusTypeParams")]
-    public class StatusTypeParam : BaseModel {
+        public class StatusTypeParam : BaseModel {
+
         public string StatusTypeName { get; set; }
         public string StatusTypeValue { get; set; }
         public string StatusTypeModule { get; set; }

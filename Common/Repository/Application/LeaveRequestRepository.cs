@@ -9,24 +9,38 @@ using DataAccess.MyContext;
 
 namespace Common.Repository.Application
 {
-    public class LeaveRequestRepository : ILeaveRequestRepository
+   public class LeaveRequestRepository : ILeaveRequestRepository
     {
         MyContext myContext = new MyContext();
         bool status = false;
 
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            var get = Get(id);
+            if(get != null)
+            {
+                get.Delete();
+                myContext.Entry(get).State = System.Data.Entity.EntityState.Modified;
+                myContext.SaveChanges();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public List<LeaveRequest> Get()
         {
-            throw new NotImplementedException();
+            var get = myContext.leaveRequests.Include("LeaveType").Include("RequesterEmployee").Include("ManagerEmployee").Include("HrdEmployee").Include("StatusTypeParam")
+                 .Where(X => X.IsDelete == false).ToList();
+            return get;
         }
 
         public LeaveRequest Get(int id)
         {
-            throw new NotImplementedException();
+            var get = myContext.leaveRequests.Find(id);
+            return get;
         }
 
         public List<LeaveRequest> GetSearch(string values)
@@ -36,12 +50,57 @@ namespace Common.Repository.Application
 
         public bool Insert(LeaveRequestVM leaveRequestVM)
         {
-            throw new NotImplementedException();
+            var push = new LeaveRequest(leaveRequestVM);
+            var getLeaveType = myContext.leaveTypes.Find(leaveRequestVM.Leave_Id);
+            push.LeaveType = getLeaveType;
+            var getRequesterEmployee = myContext.employees.Find(leaveRequestVM.Requester_Id);
+            push.RequesterEmployee = getRequesterEmployee;
+            var getManagerEmployee = myContext.employees.Find(leaveRequestVM.ApprovalManager_Id);
+            push.ManagerEmployee = getManagerEmployee;
+            var getHrdEmployee = myContext.employees.Find(leaveRequestVM.ApprovalHrd_Id);
+            push.HrdEmployee = getHrdEmployee;
+            var getStatusTypeParam = myContext.statusTypeParams.Find(leaveRequestVM.Status_Id);
+            push.StatusTypeParam = getStatusTypeParam;
+            myContext.leaveRequests.Add(push);
+            var result = myContext.SaveChanges();
+            if(result > 0)
+            {
+                status = true;
+            }
+            else
+            {
+                return status;
+            }
+            return status;
+
         }
 
-        public bool Update(int id, LeaveRequestVM leaveRequest)
+        public bool Update(int id, LeaveRequestVM leaveRequestVM)
         {
-            throw new NotImplementedException();
+            var get = Get(id);
+            get.Update(id, leaveRequestVM);
+            var getLeaveType = myContext.leaveTypes.Find(leaveRequestVM.Leave_Id);
+            get.LeaveType = getLeaveType;
+            var getRequesterEmployee = myContext.employees.Find(leaveRequestVM.Requester_Id);
+            get.RequesterEmployee = getRequesterEmployee;
+            var getManagerEmployee = myContext.employees.Find(leaveRequestVM.ApprovalManager_Id);
+            get.ManagerEmployee = getManagerEmployee;
+            var getHrdEmployee = myContext.employees.Find(leaveRequestVM.ApprovalHrd_Id);
+            get.HrdEmployee = getHrdEmployee;
+            var getStatusTypeParam = myContext.statusTypeParams.Find(leaveRequestVM.Status_Id);
+            get.StatusTypeParam = getStatusTypeParam;
+
+            myContext.Entry(get).State = System.Data.Entity.EntityState.Modified;
+            var result = myContext.SaveChanges();
+            if (result > 0)
+            {
+                status = true;
+            }
+            else
+            {
+                status = false;
+            }
+            return status;
         }
     }
 }

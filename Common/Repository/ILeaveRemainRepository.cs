@@ -11,9 +11,8 @@ namespace Common.Repository
     public interface ILeaveRemainRepository
     {
         List<LeaveRemain> Get();
-        List<LeaveRemain> GetSearch(string values);
-        LeaveRemain get(int id);
-        bool Insert(int id);
+        LeaveRemain Get(int id);
+        bool Insert(LeaveRemainVM leaveRemainVM);
         bool Update(int id, LeaveRemainVM leaveRemainVM);
         bool Delete(int id);
     }

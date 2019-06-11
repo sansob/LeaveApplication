@@ -11,7 +11,6 @@ namespace Common.Repository
     public interface IStatusTypeParamRepository
     {
         List<StatusTypeParam> Get();
-        List<StatusTypeParam> GetSearch(string values);
         StatusTypeParam Get(int id);
         bool Insert(StatusTypeParamVM statusTypeParamVM);
         bool Update(int id, StatusTypeParamVM statusTypeParamVM);
