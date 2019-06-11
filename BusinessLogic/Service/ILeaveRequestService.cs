@@ -1,15 +1,13 @@
 ﻿using DataAccess.Models;
-using DataAccess.View_Models;
+using DataAccess.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BusinessLogic.Service
-{
-    public interface ILeaveRequestService
-    {
+namespace BusinessLogic.Service {
+    public interface ILeaveRequestService {
         List<LeaveRequest> Get();
         List<LeaveRequest> GetSearch(string values);
         LeaveRequest Get(int id);

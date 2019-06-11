@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DataAccess.Models;
-using DataAccess.View_Models;
+using DataAccess.ViewModels;
 using DataAccess.MyContext;
 
 namespace Common.Repository.Application
