@@ -14,7 +14,7 @@ namespace Common.Repository
         List<LeaveRequest> GetSearch(string values);
         LeaveRequest Get(int id);
         bool Insert(LeaveRequestVM leaveRequestVM);
-        bool Update(int id, LeaveRequestVM leaveRequest);
+        bool Update(int id, LeaveRequestVM leaveRequestVM);
         bool Delete(int id);
     }
 }

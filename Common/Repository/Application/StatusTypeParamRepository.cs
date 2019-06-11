@@ -21,7 +21,6 @@ namespace Common.Repository.Application
             {
                 get.Delete();
                 myContext.Entry(get).State = System.Data.Entity.EntityState.Modified;
-                myContext.SaveChanges();
                 return true;
             }
             else
@@ -39,13 +38,6 @@ namespace Common.Repository.Application
         public StatusTypeParam Get(int id)
         {
             var get = myContext.statusTypeParams.Find(id);
-            return get;
-        }
-
-        public List<StatusTypeParam> GetSearch(string values)
-        {
-            var get = myContext.statusTypeParams.Where
-                (X => (X.StatusTypeName.Contains(values) || X.StatusTypeValue.Contains(values) || X.StatusTypeModule.Contains(values)) && X.IsDelete == false).ToList();
             return get;
         }
 
