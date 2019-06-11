@@ -17,17 +17,23 @@
     <Grid Margin="0,0,3.6,0">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0*" />
-            <ColumnDefinition />
+            <ColumnDefinition Width="119*" />
+            <ColumnDefinition Width="52*"/>
         </Grid.ColumnDefinitions>
         <Image Grid.Column="1" HorizontalAlignment="Left" Height="129" Margin="109,67,0,0" VerticalAlignment="Top"
                Width="129" Source="/LeaveApplication;component/Assets/Images/logo.png" />
         <Label Content="MII Leave App" HorizontalAlignment="Left" Margin="91,170,0,0" VerticalAlignment="Top"
-               Height="59" Width="171" FontSize="24" Grid.Column="1" />
-        <materialDesign:PackIcon Kind="Key" Height="20" Margin="72,271,0,0" Foreground="#3498db" Grid.ColumnSpan="2" Width="34"/>
-        <materialDesign:PackIcon Kind="User" Height="20" Margin="65,234,0,0" Foreground="#3498db" Grid.ColumnSpan="2" Width="47" RenderTransformOrigin="1.107,4.353"/>
-        <TextBox Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="23" Margin="109,229,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="153"/>
-        <Button  Grid.ColumnSpan="2" Content="Login" HorizontalAlignment="Left" Margin="137,317,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
-        <TextBox Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="23" Margin="109,265,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="153"/>
+               Height="59" Width="171" FontSize="24" Grid.Column="1" Grid.ColumnSpan="2" />
+        <materialDesign:PackIcon Kind="Key" Height="20" Margin="72,271,0,0" Foreground="#3498db" Grid.ColumnSpan="2"
+                                 Width="34" />
+        <materialDesign:PackIcon Kind="User" Height="20" Margin="65,234,0,0" Foreground="#3498db" Grid.ColumnSpan="2"
+                                 Width="47" RenderTransformOrigin="1.107,4.353" />
+        <TextBox Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="34" Margin="109,218,0,0" TextWrapping="Wrap"
+                 VerticalAlignment="Top" Width="153" />
+        <Button Grid.ColumnSpan="2" Content="Login" HorizontalAlignment="Left" Margin="137,317,0,0"
+                VerticalAlignment="Top" Width="75" Click="Button_Click" />
+        <TextBox Grid.ColumnSpan="3" HorizontalAlignment="Left" Height="31" Margin="109,257,0,0" TextWrapping="Wrap"
+                 VerticalAlignment="Top" Width="153" />
 
     </Grid>
 </Window>
