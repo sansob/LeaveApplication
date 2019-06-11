@@ -7,13 +7,13 @@ namespace DataAccess.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class AddingModelLeave : IMigrationMetadata
+    public sealed partial class newImage : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddingModelLeave));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(newImage));
         
         string IMigrationMetadata.Id
         {
-            get { return "201906081527425_AddingModelLeave"; }
+            get { return "201906110253352_newImage"; }
         }
         
         string IMigrationMetadata.Source

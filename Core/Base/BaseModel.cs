@@ -14,6 +14,6 @@ namespace Core.Base
         public DateTimeOffset CreateDate { get; set; }
         public DateTimeOffset UpdateDate { get; set; }
         public DateTimeOffset DeleteDate { get; set; }
-        public bool IsDalete { get; set; }
+        public bool IsDelete { get; set; }
     }
 }
