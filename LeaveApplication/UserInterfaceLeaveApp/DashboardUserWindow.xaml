@@ -31,28 +31,27 @@
         </EventTrigger>
     </Window.Triggers>
     <Grid Background="#FFDEDEDE">
+        <Grid x:Name="GridMain" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="540" Width="1010" />
         <Grid Height="60" VerticalAlignment="Top" Background="#FFECF0F1">
-            <Grid.Effect>
-                <DropShadowEffect BlurRadius="1" ShadowDepth="1" Color="#FFACACAC" />
-            </Grid.Effect>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                <TextBlock Text="Hallo Sansob" VerticalAlignment="Center" FontSize="16" Foreground="#34495e" />
-                <materialDesign:PopupBox PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Margin="10"
+                <materialDesign:PopupBox  Content="{materialDesign:PackIcon Close}" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Margin="10"
                                          Foreground="#FF34495E">
                     <StackPanel Width="150">
-                        <Button Content="Settings" />
+                        <Button Content="Halo Hasan" />
                         <Button Content="Account" />
                         <Button Content="Help" />
                         <Separator />
                         <Button Content="Logout" />
                     </StackPanel>
                 </materialDesign:PopupBox>
+                <Button Name="BtnIcon" Content="{materialDesign:PackIcon Close}" Margin="10" Background="Transparent" Foreground="#34495e"
+                        BorderBrush="Transparent"
+                        BorderThickness="0" 
+                        ToolTip="Close Apps" Click="BtnIcon_Click" />
             </StackPanel>
         </Grid>
         <Grid x:Name="GridMenu" Width="70" HorizontalAlignment="Left" Background="#FFECF0F1">
-            <Grid.Effect>
-                <DropShadowEffect BlurRadius="2" ShadowDepth="1" Color="#FFAEAEAE" />
-            </Grid.Effect>
+
             <StackPanel>
                 <Grid Height="50" Background="#ecf0f1" RenderTransformOrigin="0.5,0.5">
                     <Grid.RenderTransform>
@@ -79,28 +78,22 @@
 
                 </Grid>
                 <ListView x:Name="ListViewMenu" Foreground="#34495e"
-                          ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                          ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                          SelectionChanged="ListViewMenu_SelectionChanged">
                     <ListViewItem x:Name="ItemHome" Height="60">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="ViewDashboard" Height="25" Width="25" Margin="10" />
                             <TextBlock Text="Home" VerticalAlignment="Center" Margin="20 10" />
                         </StackPanel>
                     </ListViewItem>
-                    <ListViewItem x:Name="ItemCreate" Height="60">
-                        <StackPanel Orientation="Horizontal">
-                            <materialDesign:PackIcon Kind="AddBox" Height="25" Width="25" Margin="10" />
-                            <TextBlock Text="Leave Request" VerticalAlignment="Center" Margin="20 10" />
-                        </StackPanel>
-                    </ListViewItem>
-                    <ListViewItem Height="60">
+                    <ListViewItem x:Name="ItemHistory" Height="60">
                         <StackPanel Orientation="Horizontal">
                             <materialDesign:PackIcon Kind="History" Height="25" Width="25" Margin="10" />
-                            <TextBlock Text="History" VerticalAlignment="Center" Margin="20 10" />
+                            <TextBlock Text="Leave Request" VerticalAlignment="Center" Margin="20 10" />
                         </StackPanel>
                     </ListViewItem>
                 </ListView>
             </StackPanel>
         </Grid>
-        <Frame Content="Frame" HorizontalAlignment="Left" Height="100" Margin="117,65,0,0" VerticalAlignment="Top" Width="100" NavigationUIVisibility="Hidden" Source="/LeaveApplication;component/UserInterfaceLeaveApp/LoginWindow.xaml"/>
     </Grid>
 </Window>
