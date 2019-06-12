@@ -2,8 +2,7 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:LeaveApplication.UserInterfaceLeaveApp.UserControl"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              TextElement.Foreground="{DynamicResource MaterialDesignBody}"
              TextElement.FontWeight="Regular"
@@ -30,8 +29,8 @@
                     </Style.Triggers>
                 </Style>
             </Grid.Style>
-            <materialDesign:PackIcon Kind="NaturePeople" Height="86" Width="Auto" Foreground="#2980b9" Margin="18,20,22,0" HorizontalAlignment="Stretch"/>
-            <TextBlock Text="Request Leave" Margin="18,106,10,0.6" FontSize="19" FontFamily="Lato Light"></TextBlock>
+            <materialDesign:PackIcon MouseUp="UIElement_OnMouseUp" Kind="NaturePeople" Height="86" Width="Auto" Foreground="#2980b9" Margin="18,20,22,0" HorizontalAlignment="Stretch"/>
+            <TextBlock Text="Request Leave" Margin="17,121,10,-15" FontSize="19" FontFamily="Lato Light"></TextBlock>
         </Grid>
 
         <Grid Margin="247,154,603,145.6" Width="150" Height="150">
@@ -46,7 +45,7 @@
                 </Style>
             </Grid.Style>
             <materialDesign:PackIcon Kind="History" Height="86" Width="Auto" Foreground="#2980b9" Margin="18,20,22,0" HorizontalAlignment="Stretch"/>
-            <TextBlock Text="History" Margin="18,106,10,0.6" FontSize="19" FontFamily="Lato Light"></TextBlock>
+            <TextBlock Text="History" Margin="48,122,-21,-16" FontSize="19" FontFamily="Lato Light"></TextBlock>
         </Grid>
 
     </Grid>

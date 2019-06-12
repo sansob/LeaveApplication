@@ -1,0 +1,41 @@
+﻿<Window x:Class="LeaveApplication.UserInterfaceLeaveApp.CreateLeaveWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d" Height="600" Width="500" ResizeMode="NoResize" 
+        Topmost="True"   
+        WindowStartupLocation="CenterScreen" WindowStyle="None">
+
+    <Grid Background="White">
+        <Grid Height="60" VerticalAlignment="Top" Background="#3498db">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Name="BtnIcon" Content="{materialDesign:PackIcon Close}" Margin="10" Background="Transparent" Foreground="white"
+                        BorderBrush="Transparent"
+                        BorderThickness="0" 
+                        ToolTip="Close Window" Click="BtnIcon_Click" />
+            </StackPanel>
+            <TextBlock Foreground="White" HorizontalAlignment="Left" Margin="10,19,0,0" TextWrapping="Wrap" Text="Create Request Leave" VerticalAlignment="Top" Width="216" FontSize="18"/>
+        </Grid>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="540" Margin="0,60,0,0" Stroke="#3498db" VerticalAlignment="Top" Width="500"/>
+        <TextBlock HorizontalAlignment="Left" Margin="14,129,0,0" TextWrapping="Wrap" Text="Leave starts" VerticalAlignment="Top" FontSize="16"/>
+        <DatePicker HorizontalAlignment="Left" Margin="162,123,0,0" VerticalAlignment="Top" Width="328" FontSize="14"/>
+        <TextBlock HorizontalAlignment="Left" Margin="14,172,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" Text="Leave ends"/>
+        <DatePicker HorizontalAlignment="Left" Margin="162,165,0,0" VerticalAlignment="Top" Width="328" FontSize="14"/>
+        <ComboBox HorizontalAlignment="Left" Margin="162,207,0,0" VerticalAlignment="Top" Width="328"/>
+        <TextBlock HorizontalAlignment="Left" Margin="14,216,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" Text="Leave type"/>
+        <TextBlock HorizontalAlignment="Left" Margin="14,265,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" Text="Reason"/>
+        <RichTextBox HorizontalAlignment="Left" Height="100" Margin="162,265,0,0" VerticalAlignment="Top" Width="328">
+            <FlowDocument>
+                <Paragraph>
+
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <TextBlock HorizontalAlignment="Left" Margin="14,86,0,0" TextWrapping="Wrap" Text="Remaining days" VerticalAlignment="Top" FontSize="16"/>
+        <TextBox HorizontalAlignment="Left" Height="31" Margin="162,81,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="328" FontSize="14"/>
+        <Button Content="Save" HorizontalAlignment="Left" Margin="415,394,0,0" VerticalAlignment="Top" Width="75"/>
+
+    </Grid>
+</Window>

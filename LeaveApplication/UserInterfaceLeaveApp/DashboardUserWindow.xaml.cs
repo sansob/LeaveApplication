@@ -27,7 +27,7 @@ namespace LeaveApplication.UserInterfaceLeaveApp {
         }
 
         private void ListViewMenu_SelectionChanged(object sender, SelectionChangedEventArgs e) {
-            System.Windows.Controls.UserControl usc = null;
+            System.Windows.Controls.UserControl usc;
             GridMain.Children.Clear();
 
             switch (((ListViewItem) ((ListView) sender).SelectedItem).Name) {
@@ -35,13 +35,16 @@ namespace LeaveApplication.UserInterfaceLeaveApp {
                     usc = new DashboardControl();
                     GridMain.Children.Add(usc);
                     break;
-                default:
+                case "ItemHistory":
+                    usc = new HistoryControl();
+                    GridMain.Children.Add(usc);
                     break;
             }
         }
 
+
         private void BtnIcon_Click(object sender, RoutedEventArgs e) {
-            this.Close();
+           Application.Current.Shutdown();
         }
     }
 }
