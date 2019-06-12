@@ -1,5 +1,7 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Controls;
+using LeaveApplication.UserInterfaceLeaveApp.UserControl;
 
 namespace LeaveApplication.UserInterfaceLeaveApp {
     /// <summary>
@@ -8,6 +10,10 @@ namespace LeaveApplication.UserInterfaceLeaveApp {
     public partial class DashboardUserWindow : Window {
         public DashboardUserWindow() {
             InitializeComponent();
+            System.Windows.Controls.UserControl usc = null;
+            GridMain.Children.Clear();
+            usc = new DashboardControl();
+            GridMain.Children.Add(usc);
         }
 
         private void ButtonOpenMenu_Click(object sender, RoutedEventArgs e) {
@@ -20,5 +26,22 @@ namespace LeaveApplication.UserInterfaceLeaveApp {
             ButtonOpenMenu.Visibility = Visibility.Visible;
         }
 
+        private void ListViewMenu_SelectionChanged(object sender, SelectionChangedEventArgs e) {
+            System.Windows.Controls.UserControl usc = null;
+            GridMain.Children.Clear();
+
+            switch (((ListViewItem) ((ListView) sender).SelectedItem).Name) {
+                case "ItemHome":
+                    usc = new DashboardControl();
+                    GridMain.Children.Add(usc);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private void BtnIcon_Click(object sender, RoutedEventArgs e) {
+            this.Close();
+        }
     }
 }
