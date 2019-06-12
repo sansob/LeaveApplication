@@ -12,7 +12,6 @@ namespace BusinessLogic.Service
     public interface ILeaveTypeService
     {
         List<LeaveType> Get();
-        List<LeaveType> GetSearch(string values);
         LeaveType Get(int id);
         bool Insert(LeaveTypeVM leaveTypeVM);
         bool Update(int id, LeaveTypeVM leaveTypeVM);
