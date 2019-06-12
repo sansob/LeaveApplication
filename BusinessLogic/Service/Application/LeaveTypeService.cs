@@ -5,31 +5,29 @@ using System.Text;
 using System.Threading.Tasks;
 using DataAccess.Models;
 using DataAccess.ViewModels;
+using Common.Repository;
+using Common.Repository.Application;
 
 namespace BusinessLogic.Service.Application
 {
     public class LeaveTypeService : ILeaveTypeService
     {
+        ILeaveTypeRepository iLeaveTypeRepository = new LeaveTypeRepository();
         bool status = false;
 
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            return iLeaveTypeRepository.Delete(id);
         }
 
         public List<LeaveType> Get()
         {
-            throw new NotImplementedException();
+            return iLeaveTypeRepository.Get();
         }
 
         public LeaveType Get(int id)
         {
-            throw new NotImplementedException();
-        }
-
-        public List<LeaveType> GetSearch(string values)
-        {
-            throw new NotImplementedException();
+           return iLeaveTypeRepository.Get(id);
         }
 
         public bool Insert(LeaveTypeVM leaveTypeVM)
@@ -39,7 +37,7 @@ namespace BusinessLogic.Service.Application
 
         public bool Update(int id, LeaveTypeVM leaveTypeVM)
         {
-            throw new NotImplementedException();
+            return iLeaveTypeRepository.Update(id, leaveTypeVM);
         }
     }
 }

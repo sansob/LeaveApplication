@@ -5,41 +5,46 @@ using System.Text;
 using System.Threading.Tasks;
 using DataAccess.Models;
 using DataAccess.ViewModels;
+using Common.Repository.Application;
+using Common.Repository;
 
 namespace BusinessLogic.Service.Application
 {
     public class StatusTypeParamService : IStatusTypeParamService
     {
-        bool status = false; 
+        IStatusTypeParamRepository iStatusTypeParamRepository = new StatusTypeParamRepository();
+        bool status = false;
 
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            return iStatusTypeParamRepository.Delete(id);
         }
 
         public List<StatusTypeParam> Get()
         {
-            throw new NotImplementedException();
+            return iStatusTypeParamRepository.Get();
         }
 
         public StatusTypeParam Get(int id)
         {
-            throw new NotImplementedException();
-        }
-
-        public List<StatusTypeParam> GetSearch(string values)
-        {
-            throw new NotImplementedException();
+            return iStatusTypeParamRepository.Get(id);
         }
 
         public bool Insert(StatusTypeParamVM statusTypeParamVM)
         {
-            throw new NotImplementedException();
+            if (string.IsNullOrWhiteSpace(statusTypeParamVM.StatusTypeModule))
+            {
+                return status;
+            }
+            else
+            {
+                return iStatusTypeParamRepository.Insert(statusTypeParamVM);
+            }
         }
 
         public bool Update(int id, StatusTypeParamVM statusTypeParamVM)
         {
-            throw new NotImplementedException();
+            return iStatusTypeParamRepository.Update(id, statusTypeParamVM);
         }
     }
 }
