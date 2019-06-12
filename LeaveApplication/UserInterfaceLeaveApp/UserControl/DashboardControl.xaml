@@ -33,21 +33,6 @@
             <TextBlock Text="Request Leave" Margin="17,121,10,-15" FontSize="19" FontFamily="Lato Light"></TextBlock>
         </Grid>
 
-        <Grid Margin="247,154,603,145.6" Width="150" Height="150">
-
-            <Grid.Style>
-                <Style>
-                    <Style.Triggers>
-                        <Trigger Property="Grid.IsMouseOver" Value="True">
-                            <Setter Property="Grid.Background" Value="#ecf0f1" />
-                        </Trigger>
-                    </Style.Triggers>
-                </Style>
-            </Grid.Style>
-            <materialDesign:PackIcon Kind="History" Height="86" Width="Auto" Foreground="#2980b9" Margin="18,20,22,0" HorizontalAlignment="Stretch"/>
-            <TextBlock Text="History" Margin="48,122,-21,-16" FontSize="19" FontFamily="Lato Light"></TextBlock>
-        </Grid>
-
     </Grid>
 
 </UserControl>
