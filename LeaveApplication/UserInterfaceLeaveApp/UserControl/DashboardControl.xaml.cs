@@ -12,10 +12,10 @@ namespace LeaveApplication.UserInterfaceLeaveApp.UserControl {
             InitializeComponent();
         }
 
-        public DashboardControl(int userId) {
+        public DashboardControl(Employee userId) {
             InitializeComponent();
-            this._userId = userId;
-            //MessageBox.Show(_userId.ToString());
+            this._userId = userId.Id;
+            MessageBox.Show(_userId.ToString());
         }
 
         private void UIElement_OnMouseUp(object sender, MouseButtonEventArgs e) {

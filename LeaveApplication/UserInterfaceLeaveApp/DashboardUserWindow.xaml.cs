@@ -19,7 +19,7 @@ namespace LeaveApplication.UserInterfaceLeaveApp {
             this._employee = user;
             System.Windows.Controls.UserControl usc = null;
             GridMain.Children.Clear();
-            usc = new DashboardControl(_employee.Id);
+            usc = new DashboardControl(_employee);
             GridMain.Children.Add(usc);
             setup();
         }
@@ -45,11 +45,11 @@ namespace LeaveApplication.UserInterfaceLeaveApp {
 
             switch (((ListViewItem) ((ListView) sender).SelectedItem).Name) {
                 case "ItemHome":
-                    usc = new DashboardControl(_employee.Id);
+                    usc = new DashboardControl(_employee);
                     GridMain.Children.Add(usc);
                     break;
                 case "ItemHistory":
-                    usc = new HistoryControl();
+                    usc = new HistoryControl(_employee);
                     GridMain.Children.Add(usc);
                     break;
             }
@@ -58,6 +58,12 @@ namespace LeaveApplication.UserInterfaceLeaveApp {
 
         private void BtnIcon_Click(object sender, RoutedEventArgs e) {
            Application.Current.Shutdown();
+        }
+
+        private void ButtonBase_OnClick(object sender, RoutedEventArgs e) {
+            this.Close();
+            var home = new LoginWindow();
+            home.ShowDialog();
         }
     }
 }

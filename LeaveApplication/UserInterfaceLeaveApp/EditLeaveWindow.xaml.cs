@@ -2,29 +2,30 @@
 using System.Windows;
 using BusinessLogic.Service;
 using BusinessLogic.Service.Application;
+using DataAccess.Models;
 using DataAccess.ViewModels;
 
 namespace LeaveApplication.UserInterfaceLeaveApp {
     /// <summary>
     /// Interaction logic for CreateLeaveWindow.xaml
     /// </summary>
-    public partial class CreateLeaveWindow : Window {
+    public partial class EditLeaveWindow : Window {
+        private Employee _employee;
         ILeaveRequestService iLeaveRequestService = new LeaveRequestService();
         ILeaveTypeService iLeaveTypeService = new LeaveTypeService();
         private int _userId;
 
         LeaveRequestVM leaveRequestVM = new LeaveRequestVM();
         LeaveTypeVM leaveTypeVM = new LeaveTypeVM();
-        public CreateLeaveWindow() {
-            
+
+        public EditLeaveWindow() {
         }
 
-        public CreateLeaveWindow(int userId) {
+        public EditLeaveWindow(Employee userId) {
             InitializeComponent();
-            this._userId = userId;
+            this._employee = userId;
             //MessageBox.Show(_userId.ToString());
             LoadCombo();
-            
         }
 
         private void LoadCombo() {
@@ -37,8 +38,9 @@ namespace LeaveApplication.UserInterfaceLeaveApp {
 
         private void btn_Save_Click(object sender, RoutedEventArgs e) {
             var result = false;
-            var LeaveRequestParam = new LeaveRequestVM( Convert.ToInt32(cmb_LeaveType.SelectedValue),Convert.ToDateTime(date_LeaveStarts.Text),
-                Convert.ToDateTime(date_LeaveEnds.Text), DateTimeOffset.Now,txt_Reason.Text,
+            var LeaveRequestParam = new LeaveRequestVM(Convert.ToInt32(cmb_LeaveType.SelectedValue),
+                Convert.ToDateTime(date_LeaveStarts.Text),
+                Convert.ToDateTime(date_LeaveEnds.Text), DateTimeOffset.Now, txt_Reason.Text,
                 _userId, "lampiran", 5);
             result = iLeaveRequestService.Insert(LeaveRequestParam);
             MessageBox.Show(result ? "Insert Successfully" : "Insert Failed");

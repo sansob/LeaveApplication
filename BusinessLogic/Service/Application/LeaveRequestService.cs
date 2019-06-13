@@ -22,7 +22,6 @@ namespace BusinessLogic.Service.Application {
         }
 
         public LeaveRequest Get(int id) {
-
             return iLeaveRequestRepository.Get(id);
         }
 
@@ -31,7 +30,24 @@ namespace BusinessLogic.Service.Application {
         }
 
         public bool Insert(LeaveRequestVM leaveRequestVM) {
-            return iLeaveRequestRepository.Insert(leaveRequestVM);
+            if (string.IsNullOrWhiteSpace(leaveRequestVM.Requester_Id.ToString())) {
+                return status;
+            }
+            else if (string.IsNullOrWhiteSpace(leaveRequestVM.FromDate.ToString())) {
+                return status;
+            }
+            else if (string.IsNullOrWhiteSpace(leaveRequestVM.EndDate.ToString())) {
+                return status;
+            }
+            else if (string.IsNullOrEmpty(leaveRequestVM.Reason.ToString())) {
+                return status;
+            }
+            else if (string.IsNullOrEmpty(leaveRequestVM.Leave_Id.ToString())) {
+                return status;
+            }
+            else {
+                return iLeaveRequestRepository.Insert(leaveRequestVM);
+            }
         }
 
         public bool Update(int id, LeaveRequestVM leaveRequest) {

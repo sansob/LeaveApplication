@@ -13,20 +13,28 @@
              FontFamily="{DynamicResource MaterialDesignFont}"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="1000">
-    <Grid Background="#FFFFFF">
+    <Grid Background="#FFFFFF" Margin="0,0,0,-57.4">
         <Rectangle Fill="#FFECF0F1" HorizontalAlignment="Left" Height="122" VerticalAlignment="Top" Width="1033" Margin="0,0,-33,0"/>
         <TextBlock HorizontalAlignment="Left" Margin="31,26,0,0" TextWrapping="Wrap" Text="Leave Request History" VerticalAlignment="Top" Width="312" Height="46" FontFamily="Segoe UI" FontSize="36"/>
         <TextBlock HorizontalAlignment="Left" Margin="31,77,0,0" TextWrapping="Wrap" Text="View Leave Request History" VerticalAlignment="Top" Width="575" FontSize="20" FontFamily="Lato Light"/>
 
-        <DataGrid HorizontalAlignment="Left" Height="230" Margin="10,210,0,0" VerticalAlignment="Top" Width="980" AutoGenerateColumns="False">
+        <DataGrid SelectedCellsChanged="HistoryDataGrid_OnSelectedCellsChanged" x:Name="HistoryDataGrid" HorizontalAlignment="Left" Height="287" Margin="10,210,0,0" VerticalAlignment="Top" Width="980" AutoGenerateColumns="False" IsReadOnly="True">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="No" Binding="{Binding Path=No}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Requester" Binding="{Binding Path=Date}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Leave start date" Binding="{Binding Path=StartTime}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Leave end date" Binding="{Binding Path=EndTime}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Leave duration" Binding="{Binding Path=OvertimeType}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Create Date" Binding="{Binding Path=Activity}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Action" Binding="{Binding Path=Action}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Request Code" Binding="{Binding Path=Id}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Requester" Binding="{Binding Path=RequesterEmployee.Name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Leave start date" Binding="{Binding Path=FromDate}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Leave end date" Binding="{Binding Path=EndDate}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Leave Type" Binding="{Binding Path=LeaveType.LeaveName}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Request Date" Binding="{Binding Path=RequestDate}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Status Request" Binding="{Binding Path=StatusTypeParam.StatusTypeName}" />
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Command="{Binding showCustomerCommand}" 
+                                    CommandParameter="{Binding Path=Id}">View</Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
         <Button Content="Request Leave" HorizontalAlignment="Left" Margin="868,151,0,0" VerticalAlignment="Top" Width="auto" Click="Button_Click"/>
