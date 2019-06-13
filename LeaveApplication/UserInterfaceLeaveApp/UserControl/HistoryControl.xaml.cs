@@ -56,5 +56,9 @@ namespace LeaveApplication.UserInterfaceLeaveApp.UserControl {
 
             }
         }
+
+        private void BtnIcon_Click(object sender, RoutedEventArgs e) {
+            LoadGrid();
+        }
     }
 }

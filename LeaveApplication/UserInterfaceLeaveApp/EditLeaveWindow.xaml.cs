@@ -35,6 +35,7 @@ namespace LeaveApplication.UserInterfaceLeaveApp {
                 var result = iLeaveRequestService.Delete(Convert.ToInt32(_fromRequestId));
                 if (result) {
                     MessageBox.Show("Delete Successfully");
+                    this.Hide();
                 } else {
                     MessageBox.Show("Delete Fail");
                 }
