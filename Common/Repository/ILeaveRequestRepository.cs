@@ -19,5 +19,7 @@ namespace Common.Repository
         bool Delete(int id);
         bool ApproveHrd(int id, int approvalHrdId);
         bool SetStatus(int id, int statusId);
+        List<LeaveRequest> GetbyUser(int userId);
+        List<LeaveRequest> GetByManager();
     }
 }

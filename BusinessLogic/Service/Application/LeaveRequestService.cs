@@ -30,8 +30,16 @@ namespace BusinessLogic.Service.Application {
             return iLeaveRequestRepository.SetStatus(id, statusId);
         }
 
+        public List<LeaveRequest> GetByManager() {
+            return iLeaveRequestRepository.GetByManager();
+        }
+
         public List<LeaveRequest> Get() {
             return iLeaveRequestRepository.Get();
+        }
+
+        public List<LeaveRequest> GetbyUser(int userId) {
+            return iLeaveRequestRepository.GetbyUser(userId);
         }
 
         public LeaveRequest Get(int id) {

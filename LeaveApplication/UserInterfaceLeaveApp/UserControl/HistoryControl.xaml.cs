@@ -31,7 +31,16 @@ namespace LeaveApplication.UserInterfaceLeaveApp.UserControl {
         }
 
         private void LoadGrid() {
-            HistoryDataGrid.ItemsSource = iLeaveRequestService.Get();
+            if (_employee.Role == "1") {
+                HistoryDataGrid.ItemsSource = iLeaveRequestService.GetbyUser(_employee.Id);
+            }
+            else  if(_employee.Role=="2"){
+                HistoryDataGrid.ItemsSource = iLeaveRequestService.GetByManager();
+            }
+            else {
+                HistoryDataGrid.ItemsSource = iLeaveRequestService.Get();
+            }
+            
         }
          
         private void HistoryDataGrid_OnSelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e) {

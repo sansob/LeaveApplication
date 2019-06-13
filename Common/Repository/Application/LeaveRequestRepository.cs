@@ -83,6 +83,18 @@ namespace Common.Repository.Application
             return _status;
         }
 
+        public List<LeaveRequest> GetbyUser(int userId) {
+            var get = myContext.leaveRequests.Include("LeaveType").Include("RequesterEmployee").Include("ManagerEmployee").Include("HrdEmployee").Include("StatusTypeParam")
+                .Where(X => X.IsDelete == false && X.Requester_Id == userId).ToList();
+            return get;
+        }
+
+        public List<LeaveRequest> GetByManager() {
+            var get = myContext.leaveRequests.Include("LeaveType").Include("RequesterEmployee").Include("ManagerEmployee").Include("HrdEmployee").Include("StatusTypeParam")
+                .Where(X => X.IsDelete == false && X.ApprovalManager_Id==null).ToList();
+            return get;
+        }
+
         public List<LeaveRequest> Get()
         {
             var get = myContext.leaveRequests.Include("LeaveType").Include("RequesterEmployee").Include("ManagerEmployee").Include("HrdEmployee").Include("StatusTypeParam")

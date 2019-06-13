@@ -15,7 +15,7 @@ namespace LeaveApplication.UserInterfaceLeaveApp.UserControl {
         public DashboardControl(Employee userId) {
             InitializeComponent();
             this._userId = userId.Id;
-            MessageBox.Show(_userId.ToString());
+//            MessageBox.Show(_userId.ToString());
         }
 
         private void UIElement_OnMouseUp(object sender, MouseButtonEventArgs e) {
