@@ -15,7 +15,7 @@
              d:DesignHeight="450" d:DesignWidth="1000">
     <Grid Background="#FFFFFF">
         <Rectangle Fill="#FFECF0F1" HorizontalAlignment="Left" Height="122" VerticalAlignment="Top" Width="1033" Margin="0,0,-33,0"/>
-        <TextBlock HorizontalAlignment="Left" Margin="31,26,0,0" TextWrapping="Wrap" Text="Leave Application" VerticalAlignment="Top" Width="312" Height="46" FontFamily="Segoe UI" FontSize="36"/>
+        <TextBlock x:Name="TextWelcome" HorizontalAlignment="Left" Margin="31,26,0,0" TextWrapping="Wrap" Text="Leave Application" VerticalAlignment="Top" Width="312" Height="46" FontFamily="Segoe UI" FontSize="36"/>
         <TextBlock HorizontalAlignment="Left" Margin="31,77,0,0" TextWrapping="Wrap" Text="Request and manage leave at a glance" VerticalAlignment="Top" Width="575" FontSize="20" FontFamily="Lato Light"/>
 
         <Grid Margin="31,146,801,137.6" Width="150" Height="150">

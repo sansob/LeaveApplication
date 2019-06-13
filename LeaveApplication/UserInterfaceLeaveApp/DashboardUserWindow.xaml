@@ -33,14 +33,13 @@
     <Grid Background="#FFDEDEDE">
         <Grid x:Name="GridMain" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="540" Width="1010" />
         <Grid Height="60" VerticalAlignment="Top" Background="#FFECF0F1">
+            
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <TextBlock x:Name="TextTopName" Foreground="#34495e" VerticalAlignment="Center" FontSize="16"/>
                 <materialDesign:PopupBox  Content="{materialDesign:PackIcon Close}" PlacementMode="BottomAndAlignRightEdges" StaysOpen="False" Margin="10"
                                          Foreground="#FF34495E">
                     <StackPanel Width="150">
-                        <Button Content="Halo Hasan" />
-                        <Button Content="Account" />
-                        <Button Content="Help" />
-                        <Separator />
+                        
                         <Button Content="Logout" />
                     </StackPanel>
                 </materialDesign:PopupBox>

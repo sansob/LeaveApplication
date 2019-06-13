@@ -34,16 +34,8 @@ namespace BusinessLogic.Service.Application
             return iStatusTypeParamRepository.Get(id);
         }
 
-        public bool Insert(StatusTypeParamVM statusTypeParamVM)
-        {
-            if (string.IsNullOrWhiteSpace(statusTypeParamVM.StatusTypeModule))
-            {
-                return status;
-            }
-            else
-            {
-                return iStatusTypeParamRepository.Insert(statusTypeParamVM);
-            }
+        public bool Insert(StatusTypeParamVM statusTypeParamVM) {
+            return string.IsNullOrWhiteSpace(statusTypeParamVM.StatusTypeModule) ? status : iStatusTypeParamRepository.Insert(statusTypeParamVM);
         }
 
         public bool Update(int id, StatusTypeParamVM statusTypeParamVM)

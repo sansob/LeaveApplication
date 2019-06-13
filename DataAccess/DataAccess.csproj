@@ -59,6 +59,14 @@
     <Compile Include="Migrations\201906130139107_UpdateDB.Designer.cs">
       <DependentUpon>201906130139107_UpdateDB.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906130148191_UpdateDB1.cs" />
+    <Compile Include="Migrations\201906130148191_UpdateDB1.Designer.cs">
+      <DependentUpon>201906130148191_UpdateDB1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906130153098_setNull.cs" />
+    <Compile Include="Migrations\201906130153098_setNull.Designer.cs">
+      <DependentUpon>201906130153098_setNull.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\LeaveRemain.cs" />
@@ -90,6 +98,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906130139107_UpdateDB.resx">
       <DependentUpon>201906130139107_UpdateDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906130148191_UpdateDB1.resx">
+      <DependentUpon>201906130148191_UpdateDB1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906130153098_setNull.resx">
+      <DependentUpon>201906130153098_setNull.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -6,11 +6,11 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace DataAccess.Models {
     [Table("TB_T_LeaveRequests")]
     public class LeaveRequest : BaseModel {
-        [ForeignKey("LeaveType")] public int Leave_Id { get; set; }
-        [ForeignKey("RequesterEmployee")] public int Requester_Id { get; set; }
-        [ForeignKey("ManagerEmployee")] public int ApprovalManager_Id { get; set; }
-        [ForeignKey("HrdEmployee")] public int ApprovalHrd_Id { get; set; }
-        [ForeignKey("StatusTypeParam")] public int Status_Id { get; set; }
+        [ForeignKey("LeaveType")] public int? Leave_Id { get; set; }
+        [ForeignKey("RequesterEmployee")] public int? Requester_Id { get; set; }
+        [ForeignKey("ManagerEmployee")] public int? ApprovalManager_Id { get; set; }
+        [ForeignKey("HrdEmployee")] public int? ApprovalHrd_Id { get; set; }
+        [ForeignKey("StatusTypeParam")] public int? Status_Id { get; set; }
         public DateTimeOffset FromDate { get; set; }
         public DateTimeOffset EndDate { get; set; }
         public DateTimeOffset RequestDate { get; set; }
