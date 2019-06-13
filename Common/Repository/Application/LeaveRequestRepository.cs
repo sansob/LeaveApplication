@@ -32,15 +32,15 @@ namespace Common.Repository.Application
 
         public List<LeaveRequest> Get()
         {
-            var get = myContext.leaveRequests.Include("LeaveType").Include("RequesterEmployee").Include("ManagerEmployee").Include("HrdEmployee").Include("StatusTypeParam")
-                 .Where(X => X.IsDelete == false).ToList();
+            var get = myContext.leaveRequests.Include("LeaveType").Where(x => x.IsDelete == false).ToList();
             return get;
         }
 
         public LeaveRequest Get(int id)
         {
-            var get = myContext.leaveRequests.Find(id);
+            var get = myContext.leaveRequests.SingleOrDefault(x => x.IsDelete == false && x.Id == id);
             return get;
+            
         }
 
         public List<LeaveRequest> GetSearch(string values)
