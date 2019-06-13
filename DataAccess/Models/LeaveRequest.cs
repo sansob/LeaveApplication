@@ -26,6 +26,7 @@ namespace DataAccess.Models {
         public Employee HrdEmployee { get; set; }
         public LeaveType LeaveType { get; set; }
         public StatusTypeParam StatusTypeParam { get; set; }
+        
 
         public LeaveRequest(LeaveRequestVM leaveRequestVM) {
             Leave_Id = leaveRequestVM.Leave_Id;
@@ -34,8 +35,8 @@ namespace DataAccess.Models {
             RequestDate = leaveRequestVM.RequestDate;
             Reason = leaveRequestVM.Reason;
             Requester_Id = leaveRequestVM.Requester_Id;
-//            ApprovalManager_Id = leaveRequestVM.ApprovalManager_Id;
-//            ApprovalHrd_Id = leaveRequestVM.ApprovalManager_Id;
+            ApprovalManager_Id = leaveRequestVM.ApprovalManager_Id;
+            ApprovalHrd_Id = leaveRequestVM.ApprovalManager_Id;
             Attachments = leaveRequestVM.Attachments;
             Status_Id = leaveRequestVM.Status_Id;
             CreateDate = DateTimeOffset.Now.ToLocalTime();
@@ -54,6 +55,11 @@ namespace DataAccess.Models {
             Attachments = leaveRequestVM.Attachments;
             Status_Id = leaveRequestVM.Status_Id;
             CreateDate = DateTimeOffset.Now.ToLocalTime();
+        }
+
+        public void ApproveManager (LeaveRequestVM leaveRequestVM) {
+//            this.Id = leaveRequestVM.Id;
+            this.ApprovalManager_Id = leaveRequestVM.ApprovalManager_Id;
         }
 
         public void Delete() {

@@ -20,31 +20,51 @@ namespace DataAccess.ViewModels {
         public LeaveRequestVM(int leave_Id, DateTimeOffset FromDate, DateTimeOffset endDate, DateTimeOffset requestDate,
             string reason, int requester_Id,
             string attachments, int status_Id) {
-            this.Leave_Id = leave_Id;
+            Leave_Id = leave_Id;
             this.FromDate = FromDate;
-            this.EndDate = endDate;
-            this.RequestDate = requestDate;
-            this.Reason = reason;
-            this.Requester_Id = requester_Id;
+            EndDate = endDate;
+            RequestDate = requestDate;
+            Reason = reason;
+            Requester_Id = requester_Id;
 
-            this.Attachments = attachments;
-            this.Status_Id = status_Id;
+            Attachments = attachments;
+            Status_Id = status_Id;
+        }
+
+//        public LeaveRequestVM(int leave_Id, DateTimeOffset FromDate, DateTimeOffset endDate, DateTimeOffset requestDate,
+//            string reason, int requester_Id, int approaApprovalManagerId, int approvalHrdId,
+//            string attachments, int status_Id) {
+//            Leave_Id = leave_Id;
+//            this.FromDate = FromDate;
+//            EndDate = endDate;
+//            RequestDate = requestDate;
+//            Reason = reason;
+//            Requester_Id = requester_Id;
+//            ApprovalManager_Id = approaApprovalManagerId;
+//            ApprovalHrd_Id = approvalHrdId;
+//            Attachments = attachments;
+//            Status_Id = status_Id;
+//        }
+
+        public void ApproveManager(int id, int aapprovalManager_Id) {
+            Id = id;
+            ApprovalManager_Id = aapprovalManager_Id;
         }
 
         public void Update(int id, int leave_Id, DateTimeOffset FromDate, DateTimeOffset endDate,
             DateTimeOffset requestDate, string reason, int requester_Id,
             int approvalManager_Id, int approvalHrd_Id, string attachments, int status_Id) {
-            this.Id = id;
-            this.Leave_Id = leave_Id;
+            Id = id;
+            Leave_Id = leave_Id;
             this.FromDate = FromDate;
-            this.EndDate = endDate;
-            this.RequestDate = requestDate;
-            this.Reason = reason;
-            this.Requester_Id = requester_Id;
-            this.ApprovalManager_Id = approvalManager_Id;
-            this.ApprovalHrd_Id = approvalHrd_Id;
-            this.Attachments = attachments;
-            this.Status_Id = status_Id;
+            EndDate = endDate;
+            RequestDate = requestDate;
+            Reason = reason;
+            Requester_Id = requester_Id;
+            ApprovalManager_Id = approvalManager_Id;
+            ApprovalHrd_Id = approvalHrd_Id;
+            Attachments = attachments;
+            Status_Id = status_Id;
         }
     }
 }

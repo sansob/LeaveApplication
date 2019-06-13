@@ -13,8 +13,21 @@ namespace BusinessLogic.Service.Application {
         ILeaveRequestRepository iLeaveRequestRepository = new LeaveRequestRepository();
         bool status = false;
 
+        public bool ApproveManager(int id, int manager_id) {
+            return iLeaveRequestRepository.ApproveManager(id, manager_id); ;
+        }
+
+
         public bool Delete(int id) {
             return iLeaveRequestRepository.Delete(id);
+        }
+
+        public bool ApproveHrd(int id, int approvalHrdId) {
+            return iLeaveRequestRepository.ApproveHrd(id, approvalHrdId); ;
+        }
+
+        public bool SetStatus(int id, int statusId) {
+            return iLeaveRequestRepository.SetStatus(id, statusId);
         }
 
         public List<LeaveRequest> Get() {

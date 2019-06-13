@@ -22,10 +22,13 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Request Code" Binding="{Binding Path=Id}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Requester" Binding="{Binding Path=RequesterEmployee.Name}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Leave start date" Binding="{Binding Path=FromDate}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Leave end date" Binding="{Binding Path=EndDate}"></DataGridTextColumn>
+                <DataGridTextColumn Width="85" Header="Leave start date" Binding="{Binding Path=FromDate}"></DataGridTextColumn>
+                <DataGridTextColumn Width="90" Header="Leave end date" Binding="{Binding Path=EndDate}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Leave Type" Binding="{Binding Path=LeaveType.LeaveName}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Request Date" Binding="{Binding Path=RequestDate}"></DataGridTextColumn>
+                <DataGridTextColumn Width="90" Header="Request Date" Binding="{Binding Path=RequestDate}"></DataGridTextColumn>
+                <DataGridTextColumn Width="0" Header="Approval Manager" Binding="{Binding Path=ManagerEmployee.Name}"></DataGridTextColumn>
+                <DataGridTextColumn Width="0" Header="Approval HRD" Binding="{Binding Path=HrdEmployee.Name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Reason" Binding="{Binding Path=Reason}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Status Request" Binding="{Binding Path=StatusTypeParam.StatusTypeName}" />
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>

@@ -21,28 +21,57 @@
         </Grid>
         <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="540" Margin="0,60,0,0" Stroke="#3498db"
                    VerticalAlignment="Top" Width="500" />
-        <TextBlock HorizontalAlignment="Left" Margin="14,129,0,0" TextWrapping="Wrap" Text="Leave starts"
+        <TextBlock HorizontalAlignment="Left" Margin="14,182,0,0" TextWrapping="Wrap" Text="Leave starts"
                    VerticalAlignment="Top" FontSize="16" />
-        <DatePicker x:Name="date_LeaveStarts" HorizontalAlignment="Left" Margin="162,123,0,0" VerticalAlignment="Top"
+        <DatePicker x:Name="date_LeaveStarts" HorizontalAlignment="Left" Margin="162,176,0,0" VerticalAlignment="Top"
                     Width="328" FontSize="14" />
-        <TextBlock HorizontalAlignment="Left" Margin="14,172,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
+        <TextBlock HorizontalAlignment="Left" Margin="14,225,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
                    FontSize="16" Text="Leave ends" />
-        <DatePicker x:Name="date_LeaveEnds" HorizontalAlignment="Left" Margin="162,165,0,0" VerticalAlignment="Top"
+        <DatePicker x:Name="date_LeaveEnds" HorizontalAlignment="Left" Margin="162,218,0,0" VerticalAlignment="Top"
                     Width="328" FontSize="14" />
-        <ComboBox Name="cmb_LeaveType" HorizontalAlignment="Left" Margin="162,207,0,0" VerticalAlignment="Top"
+        <ComboBox Name="cmb_LeaveType" HorizontalAlignment="Left" Margin="162,260,0,0" VerticalAlignment="Top"
                   Width="328" SelectedValuePath="Id" DisplayMemberPath="LeaveName" />
-        <TextBlock HorizontalAlignment="Left" Margin="14,216,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
+        <TextBlock HorizontalAlignment="Left" Margin="14,269,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
                    FontSize="16" Text="Leave type" />
-        <TextBlock HorizontalAlignment="Left" Margin="14,265,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
-                   FontSize="16" Text="Reason" />
-        <TextBlock HorizontalAlignment="Left" Margin="14,86,0,0" TextWrapping="Wrap" Text="Remaining days"
+        <TextBlock HorizontalAlignment="Left" Margin="14,86,0,0" TextWrapping="Wrap" Text="Request ID"
                    VerticalAlignment="Top" FontSize="16" />
-        <TextBox HorizontalAlignment="Left" Height="31" Margin="162,81,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
+        <TextBox x:Name="Txb_Req_Id" HorizontalAlignment="Left" Height="31" Margin="162,81,0,0" TextWrapping="Wrap"
+                 VerticalAlignment="Top" IsReadOnly="True"
                  Width="328" FontSize="14" />
-        <Button x:Name="btn_Save" Content="Save" HorizontalAlignment="Left" Margin="415,301,0,0"
-                VerticalAlignment="Top" Width="75" Click="btn_Save_Click" />
-        <TextBox x:Name="txt_Reason" HorizontalAlignment="Left" Height="31" Margin="162,255,0,0" TextWrapping="Wrap"
+        <Button x:Name="btn_Save" Content="Update" HorizontalAlignment="Left" Margin="401,558,0,0"
+                VerticalAlignment="Top" Width="89" Click="btn_Save_Click" />
+        <TextBlock HorizontalAlignment="Left" Margin="14,136,0,0" TextWrapping="Wrap" Text="Requester Name"
+                   VerticalAlignment="Top" FontSize="16" />
+        <TextBlock HorizontalAlignment="Left" Margin="14,319,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
+                   FontSize="16" Text="Request Date" />
+        <TextBox x:Name="txt_Req_Date" HorizontalAlignment="Left" Height="31" Margin="162,306,0,0"
+                 TextWrapping="Wrap" IsReadOnly="True"
                  VerticalAlignment="Top" Width="328" FontSize="14" />
+        <TextBlock HorizontalAlignment="Left" Margin="14,363,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
+                   FontSize="16" Text="Status" />
+        <TextBox IsReadOnly="True" x:Name="txt_Req_Status" HorizontalAlignment="Left" Height="31" Margin="162,352,0,0"
+                 TextWrapping="Wrap"
+                 VerticalAlignment="Top" Width="328" FontSize="14" />
+        <TextBox x:Name="Txb_Req_name" HorizontalAlignment="Left" Height="31" Margin="162,126,0,0"
+                 TextWrapping="Wrap" VerticalAlignment="Top"
+                 Width="328" FontSize="14" IsReadOnly="True" />
+        <Button x:Name="Button_Approve" Content="Approve" HorizontalAlignment="Left" Margin="10,558,0,0" VerticalAlignment="Top" Width="121" Click="Button_Click" Background="#FF27AE60"/>
+        <Button Content="Cancel Request" HorizontalAlignment="Left" Margin="250,558,0,0" VerticalAlignment="Top" Width="131" Background="#FFE74C3C"/>
+        <TextBlock HorizontalAlignment="Left" Margin="14,415,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
+            FontSize="16" Text="Reason" />
+        <TextBox x:Name="Txb_Reason" HorizontalAlignment="Left" Height="31" Margin="162,401,0,0"
+            TextWrapping="Wrap" IsReadOnly="True"
+            VerticalAlignment="Top" Width="328" FontSize="14" />
+        <TextBlock HorizontalAlignment="Left" Margin="14,462,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
+            FontSize="16" ><Run Text="Manager "/><Run Text="Approval"/><LineBreak/><Run/></TextBlock>
+        <TextBox IsReadOnly="True" x:Name="Txb_Manager" HorizontalAlignment="Left" Height="31" Margin="162,448,0,0"
+            TextWrapping="Wrap"
+            VerticalAlignment="Top" Width="328" FontSize="14" />
+        <TextBlock HorizontalAlignment="Left" Margin="14,513,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
+            FontSize="16" ><Run Text="HRD Approval"/><LineBreak/><Run/></TextBlock>
+        <TextBox IsReadOnly="True" x:Name="Txb_Hrd" HorizontalAlignment="Left" Height="31" Margin="162,499,0,0"
+            TextWrapping="Wrap"
+            VerticalAlignment="Top" Width="328" FontSize="14" />
 
 
     </Grid>
