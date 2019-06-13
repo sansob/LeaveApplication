@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="LeaveApplication.UserInterfaceLeaveApp.UserControl.DashboardControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+             TextElement.FontWeight="Regular"
+             TextElement.FontSize="13"
+             TextOptions.TextFormattingMode="Ideal"
+             TextOptions.TextRenderingMode="Auto"
+             Background="{DynamicResource MaterialDesignPaper}"
+             FontFamily="{DynamicResource MaterialDesignFont}"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="1000">
+    <Grid Background="#FFFFFF">
+        <Rectangle Fill="#FFECF0F1" HorizontalAlignment="Left" Height="122" VerticalAlignment="Top" Width="1033" Margin="0,0,-33,0"/>
+        <TextBlock HorizontalAlignment="Left" Margin="31,26,0,0" TextWrapping="Wrap" Text="Leave Application" VerticalAlignment="Top" Width="312" Height="46" FontFamily="Segoe UI" FontSize="36"/>
+        <TextBlock HorizontalAlignment="Left" Margin="31,77,0,0" TextWrapping="Wrap" Text="Request and manage leave at a glance" VerticalAlignment="Top" Width="575" FontSize="20" FontFamily="Lato Light"/>
+
+        <Grid Margin="31,146,801,137.6" Width="150" Height="150">
+            
+            <Grid.Style>
+                <Style>
+                    <Style.Triggers>
+                        <Trigger Property="Grid.IsMouseOver" Value="True">
+                            <Setter Property="Grid.Background" Value="#ecf0f1" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Grid.Style>
+            <materialDesign:PackIcon MouseUp="UIElement_OnMouseUp" Kind="NaturePeople" Height="86" Width="Auto" Foreground="#2980b9" Margin="18,20,22,0" HorizontalAlignment="Stretch"/>
+            <TextBlock Text="Request Leave" Margin="17,121,10,-15" FontSize="19" FontFamily="Lato Light"></TextBlock>
+        </Grid>
+
+    </Grid>
+
+</UserControl>

@@ -1,4 +1,4 @@
-﻿using Common.Repository.Application;
+using Common.Repository.Application;
 using DataAccess.MyContext;
 using System;
 using System.Collections.Generic;

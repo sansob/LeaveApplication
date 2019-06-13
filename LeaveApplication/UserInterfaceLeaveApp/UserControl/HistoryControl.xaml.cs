@@ -13,13 +13,18 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace LeaveApplication {
+namespace LeaveApplication.UserInterfaceLeaveApp.UserControl {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for HistoryControl.xaml
     /// </summary>
-    public partial class MainWindow : Window {
-        public MainWindow() {
+    public partial class HistoryControl : System.Windows.Controls.UserControl {
+        public HistoryControl() {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e) {
+            var temp = new CreateLeaveWindow();
+            temp.Show();
         }
     }
 }
