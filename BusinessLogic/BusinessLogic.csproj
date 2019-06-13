@@ -68,6 +68,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{4DF31537-26CE-4259-888F-B8FDF7324C06}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DataAccess\DataAccess.csproj">
       <Project>{7E795C2E-591C-47AC-8E5A-C69E0225F1CE}</Project>
       <Name>DataAccess</Name>

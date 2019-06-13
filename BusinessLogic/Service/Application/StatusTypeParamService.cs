@@ -25,6 +25,10 @@ namespace BusinessLogic.Service.Application
             return iStatusTypeParamRepository.Get();
         }
 
+        public List<StatusTypeParam> GetSearch(string values) {
+            throw new NotImplementedException();
+        }
+
         public StatusTypeParam Get(int id)
         {
             return iStatusTypeParamRepository.Get(id);

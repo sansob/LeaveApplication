@@ -55,6 +55,10 @@
     <Compile Include="Migrations\201906110253352_newImage.Designer.cs">
       <DependentUpon>201906110253352_newImage.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906130139107_UpdateDB.cs" />
+    <Compile Include="Migrations\201906130139107_UpdateDB.Designer.cs">
+      <DependentUpon>201906130139107_UpdateDB.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\LeaveRemain.cs" />
@@ -83,6 +87,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201906110253352_newImage.resx">
       <DependentUpon>201906110253352_newImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906130139107_UpdateDB.resx">
+      <DependentUpon>201906130139107_UpdateDB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
