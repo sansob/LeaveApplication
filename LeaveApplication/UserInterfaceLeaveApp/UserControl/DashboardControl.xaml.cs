@@ -14,5 +14,6 @@ namespace LeaveApplication.UserInterfaceLeaveApp.UserControl {
             CreateLeaveWindow createLeaveWindow = new CreateLeaveWindow();
             createLeaveWindow.Show();
         }
+
     }
 }

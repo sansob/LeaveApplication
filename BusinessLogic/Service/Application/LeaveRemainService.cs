@@ -19,6 +19,10 @@ namespace BusinessLogic.Service.Application {
             throw new NotImplementedException();
         }
 
+        public bool Insert(LeaveRemainVM leaveRemainVM) {
+            throw new NotImplementedException();
+        }
+
         public List<LeaveRemain> GetSearch(string values) {
             throw new NotImplementedException();
         }

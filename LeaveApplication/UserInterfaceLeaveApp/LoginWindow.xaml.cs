@@ -1,18 +1,6 @@
 using Common.Repository.Application;
 using DataAccess.MyContext;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace LeaveApplication.UserInterfaceLeaveApp
 {
@@ -35,12 +23,13 @@ namespace LeaveApplication.UserInterfaceLeaveApp
 
         private void Login()
         {
-            LoginRepository login = new LoginRepository(); 
-            if(login.cekLogin(username.Text, password.Password) == true)
+            var login = new LoginRepository();
+            var temp = login.CekLogin(username.Text, password.Password);
+            if (temp!=null)
             {
                 MessageBox.Show("Login Berhasil", "Peringatan", MessageBoxButton.OK, MessageBoxImage.Information);
                 this.Hide();
-                DashboardUserWindow home = new DashboardUserWindow();
+                var home = new DashboardUserWindow(temp);
                 home.ShowDialog();
             }
             else
