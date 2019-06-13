@@ -17,7 +17,7 @@ namespace DataAccess.ViewModels {
 
         public LeaveRequestVM() { }
 
-        public LeaveRequestVM( int leave_Id, DateTimeOffset FromDate, DateTimeOffset endDate, DateTimeOffset requestDate, string reason, int requester_Id, 
+        public LeaveRequestVM(int leave_Id, DateTimeOffset FromDate, DateTimeOffset endDate, DateTimeOffset requestDate, string reason, int requester_Id, 
             int approvalManager_Id, int approvalHrd_Id, string attachments, int status_Id)
         {
             this.Leave_Id = leave_Id;

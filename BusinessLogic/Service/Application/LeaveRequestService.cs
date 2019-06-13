@@ -31,7 +31,7 @@ namespace BusinessLogic.Service.Application {
         }
 
         public bool Insert(LeaveRequestVM leaveRequestVM) {
-            throw new NotImplementedException();
+            return iLeaveRequestRepository.Insert(leaveRequestVM);
         }
 
         public bool Update(int id, LeaveRequestVM leaveRequest) {

@@ -19,7 +19,7 @@ namespace LeaveApplication.UserInterfaceLeaveApp {
             this._employee = user;
             System.Windows.Controls.UserControl usc = null;
             GridMain.Children.Clear();
-            usc = new DashboardControl();
+            usc = new DashboardControl(_employee.Id);
             GridMain.Children.Add(usc);
             setup();
         }
@@ -45,8 +45,7 @@ namespace LeaveApplication.UserInterfaceLeaveApp {
 
             switch (((ListViewItem) ((ListView) sender).SelectedItem).Name) {
                 case "ItemHome":
-                    MessageBox.Show(_employee.Id.ToString());
-                    usc = new DashboardControl();
+                    usc = new DashboardControl(_employee.Id);
                     GridMain.Children.Add(usc);
                     break;
                 case "ItemHistory":

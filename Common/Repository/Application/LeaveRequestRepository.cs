@@ -51,16 +51,6 @@ namespace Common.Repository.Application
         public bool Insert(LeaveRequestVM leaveRequestVM)
         {
             var push = new LeaveRequest(leaveRequestVM);
-            var getLeaveType = myContext.leaveTypes.Find(leaveRequestVM.Leave_Id);
-            push.LeaveType = getLeaveType;
-            var getRequesterEmployee = myContext.employees.Find(leaveRequestVM.Requester_Id);
-            push.RequesterEmployee = getRequesterEmployee;
-            var getManagerEmployee = myContext.employees.Find(leaveRequestVM.ApprovalManager_Id);
-            push.ManagerEmployee = getManagerEmployee;
-            var getHrdEmployee = myContext.employees.Find(leaveRequestVM.ApprovalHrd_Id);
-            push.HrdEmployee = getHrdEmployee;
-            var getStatusTypeParam = myContext.statusTypeParams.Find(leaveRequestVM.Status_Id);
-            push.StatusTypeParam = getStatusTypeParam;
             myContext.leaveRequests.Add(push);
             var result = myContext.SaveChanges();
             if(result > 0)
