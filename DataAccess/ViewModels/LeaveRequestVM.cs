@@ -26,7 +26,6 @@ namespace DataAccess.ViewModels {
             RequestDate = requestDate;
             Reason = reason;
             Requester_Id = requester_Id;
-
             Attachments = attachments;
             Status_Id = status_Id;
         }

@@ -36,13 +36,13 @@ namespace LeaveApplication.UserInterfaceLeaveApp {
         }
 
         private void btn_Save_Click(object sender, RoutedEventArgs e) {
-//            var result = false;
-//            var LeaveRequestParam = new LeaveRequestVM(Convert.ToInt32(cmb_LeaveType.SelectedValue),
-//                Convert.ToDateTime(date_LeaveStarts.Text),
-//                Convert.ToDateTime(date_LeaveEnds.Text), DateTimeOffset.Now, txt_Reason.Text,
-//                _userId, "lampiran", 5);
-//            result = iLeaveRequestService.Insert(LeaveRequestParam);
-//            MessageBox.Show(result ? "Insert Successfully" : "Insert Failed");
+            var result = false;
+            var LeaveRequestParam = new LeaveRequestVM(Convert.ToInt32(cmb_LeaveType.SelectedValue),
+                Convert.ToDateTime(date_LeaveStarts.Text),
+                Convert.ToDateTime(date_LeaveEnds.Text), DateTimeOffset.Now, txt_Reason.Text,
+                _userId, "lampiran", 5);
+            result = iLeaveRequestService.Insert(LeaveRequestParam);
+            MessageBox.Show(result ? "Insert Successfully" : "Insert Failed");
         }
     }
 }

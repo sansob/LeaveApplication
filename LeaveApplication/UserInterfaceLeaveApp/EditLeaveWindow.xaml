@@ -38,7 +38,7 @@
         <TextBox x:Name="Txb_Req_Id" HorizontalAlignment="Left" Height="31" Margin="162,81,0,0" TextWrapping="Wrap"
                  VerticalAlignment="Top" IsReadOnly="True"
                  Width="328" FontSize="14" />
-        <Button x:Name="btn_Save" Content="Update" HorizontalAlignment="Left" Margin="401,558,0,0"
+        <Button Visibility="Collapsed" x:Name="btn_update" Content="Update" HorizontalAlignment="Left" Margin="401,558,0,0"
                 VerticalAlignment="Top" Width="89" Click="btn_Save_Click" />
         <TextBlock HorizontalAlignment="Left" Margin="14,136,0,0" TextWrapping="Wrap" Text="Requester Name"
                    VerticalAlignment="Top" FontSize="16" />
@@ -55,8 +55,8 @@
         <TextBox x:Name="Txb_Req_name" HorizontalAlignment="Left" Height="31" Margin="162,126,0,0"
                  TextWrapping="Wrap" VerticalAlignment="Top"
                  Width="328" FontSize="14" IsReadOnly="True" />
-        <Button x:Name="Button_Approve" Content="Approve" HorizontalAlignment="Left" Margin="10,558,0,0" VerticalAlignment="Top" Width="98" Click="Button_Click" Background="#FF27AE60"/>
-        <Button x:Name="Button_Reject" Content="Reject" HorizontalAlignment="Left" Margin="122,558,0,0" VerticalAlignment="Top" Width="106" Background="#FFC0392B" Click="Button_Click_1"/>
+        <Button x:Name="Button_Approve" Content="Approve" HorizontalAlignment="Left" Margin="104,558,0,0" VerticalAlignment="Top" Width="98" Click="Button_Click" Background="#FF27AE60"/>
+        <Button x:Name="Button_Reject" Content="Reject" HorizontalAlignment="Left" Margin="216,558,0,0" VerticalAlignment="Top" Width="106" Background="#FFC0392B" Click="Button_Click_1"/>
         <TextBlock HorizontalAlignment="Left" Margin="14,415,0,0" TextWrapping="Wrap" VerticalAlignment="Top"
             FontSize="16" Text="Reason" />
         <TextBox x:Name="Txb_Reason" HorizontalAlignment="Left" Height="31" Margin="162,401,0,0"
@@ -72,7 +72,7 @@
         <TextBox IsReadOnly="True" x:Name="Txb_Hrd" HorizontalAlignment="Left" Height="31" Margin="162,499,0,0"
             TextWrapping="Wrap"
             VerticalAlignment="Top" Width="328" FontSize="14" />
-        <Button Content="Cancel &amp; Delete" HorizontalAlignment="Left" Margin="243,558,0,0" VerticalAlignment="Top" Width="153" Background="#FFE74C3C" Click="Button_Click_2"/>
+        <Button Content="Cancel &amp; Delete" HorizontalAlignment="Left" Margin="337,558,0,0" VerticalAlignment="Top" Width="153" Background="#FFE74C3C" Click="Button_Click_2"/>
 
 
     </Grid>

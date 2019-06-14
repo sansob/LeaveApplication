@@ -35,8 +35,8 @@ namespace DataAccess.Models {
             RequestDate = leaveRequestVM.RequestDate;
             Reason = leaveRequestVM.Reason;
             Requester_Id = leaveRequestVM.Requester_Id;
-            ApprovalManager_Id = leaveRequestVM.ApprovalManager_Id;
-            ApprovalHrd_Id = leaveRequestVM.ApprovalManager_Id;
+//            ApprovalManager_Id = leaveRequestVM.ApprovalManager_Id;
+//            ApprovalHrd_Id = leaveRequestVM.ApprovalManager_Id;
             Attachments = leaveRequestVM.Attachments;
             Status_Id = leaveRequestVM.Status_Id;
             CreateDate = DateTimeOffset.Now.ToLocalTime();
