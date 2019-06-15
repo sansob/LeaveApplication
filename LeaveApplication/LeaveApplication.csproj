@@ -74,6 +74,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="UserInterfaceLeaveApp\EditLeaveWindow.xaml.cs">
+      <DependentUpon>EditLeaveWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserInterfaceLeaveApp\CreateLeaveWindow.xaml.cs">
       <DependentUpon>CreateLeaveWindow.xaml</DependentUpon>
     </Compile>
@@ -83,6 +86,10 @@
     <Compile Include="UserInterfaceLeaveApp\UserControl\HistoryControl.xaml.cs">
       <DependentUpon>HistoryControl.xaml</DependentUpon>
     </Compile>
+    <Page Include="UserInterfaceLeaveApp\EditLeaveWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="UserInterfaceLeaveApp\CreateLeaveWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -143,6 +150,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\BusinessLogic\BusinessLogic.csproj">
+      <Project>{6DA8CA23-18D1-49BC-9CD9-0BCCC74308CA}</Project>
+      <Name>BusinessLogic</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Common\Common.csproj">
       <Project>{4DF31537-26CE-4259-888F-B8FDF7324C06}</Project>
       <Name>Common</Name>

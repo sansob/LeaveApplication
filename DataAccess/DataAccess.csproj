@@ -67,6 +67,10 @@
     <Compile Include="Migrations\201906130153098_setNull.Designer.cs">
       <DependentUpon>201906130153098_setNull.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201906130627363_updateNullable.cs" />
+    <Compile Include="Migrations\201906130627363_updateNullable.Designer.cs">
+      <DependentUpon>201906130627363_updateNullable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\LeaveRemain.cs" />
@@ -104,6 +108,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201906130153098_setNull.resx">
       <DependentUpon>201906130153098_setNull.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906130627363_updateNullable.resx">
+      <DependentUpon>201906130627363_updateNullable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

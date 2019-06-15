@@ -40,7 +40,7 @@
                                          Foreground="#FF34495E">
                     <StackPanel Width="150">
                         
-                        <Button Content="Logout" />
+                        <Button Click="ButtonBase_OnClick" Content="Logout" />
                     </StackPanel>
                 </materialDesign:PopupBox>
                 <Button Name="BtnIcon" Content="{materialDesign:PackIcon Close}" Margin="10" Background="Transparent" Foreground="#34495e"

@@ -1,7 +1,7 @@
 ﻿<UserControl x:Class="LeaveApplication.UserInterfaceLeaveApp.UserControl.HistoryControl"
- xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              TextElement.Foreground="{DynamicResource MaterialDesignBody}"
@@ -11,26 +11,48 @@
              TextOptions.TextRenderingMode="Auto"
              Background="{DynamicResource MaterialDesignPaper}"
              FontFamily="{DynamicResource MaterialDesignFont}"
-             mc:Ignorable="d" 
+             mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="1000">
-    <Grid Background="#FFFFFF">
-        <Rectangle Fill="#FFECF0F1" HorizontalAlignment="Left" Height="122" VerticalAlignment="Top" Width="1033" Margin="0,0,-33,0"/>
-        <TextBlock HorizontalAlignment="Left" Margin="31,26,0,0" TextWrapping="Wrap" Text="Leave Request History" VerticalAlignment="Top" Width="312" Height="46" FontFamily="Segoe UI" FontSize="36"/>
-        <TextBlock HorizontalAlignment="Left" Margin="31,77,0,0" TextWrapping="Wrap" Text="View Leave Request History" VerticalAlignment="Top" Width="575" FontSize="20" FontFamily="Lato Light"/>
+    <Grid Background="#FFFFFF" Margin="0,0,0,-57.4">
+        <Rectangle Fill="#FFECF0F1" HorizontalAlignment="Left" Height="122" VerticalAlignment="Top" Width="1033"
+                   Margin="0,0,-33,0" />
+        <TextBlock HorizontalAlignment="Left" Margin="31,26,0,0" TextWrapping="Wrap" Text="Leave Request History"
+                   VerticalAlignment="Top" Width="312" Height="46" FontFamily="Segoe UI" FontSize="36" />
+        <TextBlock HorizontalAlignment="Left" Margin="31,77,0,0" TextWrapping="Wrap" Text="View Leave Request History"
+                   VerticalAlignment="Top" Width="575" FontSize="20" FontFamily="Lato Light" />
 
-        <DataGrid HorizontalAlignment="Left" Height="230" Margin="10,210,0,0" VerticalAlignment="Top" Width="980" AutoGenerateColumns="False">
+        <DataGrid SelectedCellsChanged="HistoryDataGrid_OnSelectedCellsChanged" x:Name="HistoryDataGrid"
+                  HorizontalAlignment="Left" Height="287" Margin="10,210,0,0" VerticalAlignment="Top" Width="980"
+                  AutoGenerateColumns="False" IsReadOnly="True">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="No" Binding="{Binding Path=No}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Requester" Binding="{Binding Path=Date}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Leave start date" Binding="{Binding Path=StartTime}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Leave end date" Binding="{Binding Path=EndTime}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Leave duration" Binding="{Binding Path=OvertimeType}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Create Date" Binding="{Binding Path=Activity}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Action" Binding="{Binding Path=Action}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Request Code" Binding="{Binding Path=Id}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Requester" Binding="{Binding Path=RequesterEmployee.Name}"></DataGridTextColumn>
+                <DataGridTextColumn Width="85" Header="Leave start date" Binding="{Binding Path=FromDate}"></DataGridTextColumn>
+                <DataGridTextColumn Width="90" Header="Leave end date" Binding="{Binding Path=EndDate}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Leave Type" Binding="{Binding Path=LeaveType.LeaveName}"></DataGridTextColumn>
+                <DataGridTextColumn Width="90" Header="Request Date" Binding="{Binding Path=RequestDate}"></DataGridTextColumn>
+                <DataGridTextColumn Width="0" Header="Approval Manager" Binding="{Binding Path=ManagerEmployee.Name}"></DataGridTextColumn>
+                <DataGridTextColumn Width="0" Header="Approval HRD" Binding="{Binding Path=HrdEmployee.Name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Reason" Binding="{Binding Path=Reason}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Status Request" Binding="{Binding Path=StatusTypeParam.StatusTypeName}" />
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Command="{Binding showCustomerCommand}"
+                                    CommandParameter="{Binding Path=Id}">
+                                View
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="Request Leave" HorizontalAlignment="Left" Margin="868,151,0,0" VerticalAlignment="Top" Width="auto" Click="Button_Click"/>
-
+        <Button Content="Request Leave" HorizontalAlignment="Left" Margin="868,151,0,0" VerticalAlignment="Top"
+                Width="auto" Click="Button_Click" />
+        <Button Name="BtnIcon" Content="{materialDesign:PackIcon Refresh}" Margin="785,106,140,369"
+                Foreground="white"
+                Width="75"
+                ToolTip="Close Window" Click="BtnIcon_Click" />
     </Grid>
 
 </UserControl>
